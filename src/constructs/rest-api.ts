@@ -65,28 +65,6 @@ export class RestApi<PATHS, OPS> extends BaseApi {
       };
     }
 
-    // if ((props.monitoring ?? true) && this.monitoring) {
-    //   this.monitoring.apiErrorsWidget.addLeftMetric(this.api.metricServerError({
-    //     statistic: 'sum',
-    //   }));
-    //   this.monitoring.apiErrorsWidget.addLeftMetric(this.api.metricClientError({
-    //     statistic: 'sum',
-    //   }));
-
-    //   this.monitoring.apiLatencyWidget.addLeftMetric(this.api.metricLatency({
-    //     statistic: 'Average',
-    //   }));
-    //   this.monitoring.apiLatencyWidget.addLeftMetric(this.api.metricLatency({
-    //     statistic: 'p90',
-    //   }));
-    //   this.monitoring.apiLatencyTailWidget.addLeftMetric(this.api.metricLatency({
-    //     statistic: 'p95',
-    //   }));
-    //   this.monitoring.apiLatencyTailWidget.addLeftMetric(this.api.metricLatency({
-    //     statistic: 'p99',
-    //   }));
-    // }
-
     if (props.autoGenerateRoutes ?? true) {
       for (const path in this.apiSpec.paths) {
         if (Object.prototype.hasOwnProperty.call(this.apiSpec.paths, path)) {
@@ -188,6 +166,19 @@ export class RestApi<PATHS, OPS> extends BaseApi {
       apiDefinition: aws_apigateway.ApiDefinition.fromInline(this.apiSpec),
       ...props.restApiProps,
     });
+
+    if (this.monitoring) {
+      this.monitoring.addLargeHeader(`${props.apiName} Rest API Monitoring`);
+      this.monitoring.monitorApiGateway({
+        api: this.api,
+      });
+
+      // FIXME This currently depends on the side effects of having generated the routes further above
+      this.addOperationFunctionMonitoring(props.apiName, this._functions);
+      if (props.singleTableDatastore) {
+        this.addSingleTableMonitoring(props.singleTableDatastore);
+      }
+    }
 
     // add invoke permissions to Lambda functions
     for (const fn of Object.values(this._functions)) {
@@ -300,13 +291,6 @@ export class RestApi<PATHS, OPS> extends BaseApi {
     });
     this._functions[operation.operationId!] = fn;
     cdk.Tags.of(fn).add('OpenAPI', description.replace(/[^\w\s\d_.:/=+\-@]/g, ''));
-
-    // if (this.monitoring) {
-    //   this.monitoring.lambdaDurationsWidget.addLeftMetric(fn.metricDuration());
-    //   this.monitoring.lambdaInvokesWidget.addLeftMetric(fn.metricInvocations());
-    //   this.monitoring.lambdaErrorsWidget.addLeftMetric(fn.metricErrors());
-    //   this.monitoring.lambdaErrorsWidget.addLeftMetric(fn.metricThrottles());
-    // }
 
     const hasVersionConfig = lambdaOptions.currentVersionOptions != undefined;
 

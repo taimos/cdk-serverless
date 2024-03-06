@@ -44,6 +44,7 @@
 <a href="GraphQlApi.html#apiHostName" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>api<wbr/>Host<wbr/>Name?</span></a>
 <a href="GraphQlApi.html#cognitoAuth" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>cognito<wbr/>Auth</span></a>
 <a href="GraphQlApi.html#hostedZone" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>hosted<wbr/>Zone?</span></a>
+<a href="GraphQlApi.html#monitoring" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>monitoring?</span></a>
 <a href="GraphQlApi.html#node" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>node</span></a>
 <a href="GraphQlApi.html#props" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>props</span></a>
 <a href="GraphQlApi.html#tableDataSource" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>table<wbr/>Data<wbr/>Source?</span></a>
@@ -54,6 +55,8 @@
 <a href="GraphQlApi.html#addDynamoDbVtlResolver" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Dynamo<wbr/>Db<wbr/>Vtl<wbr/>Resolver</span></a>
 <a href="GraphQlApi.html#addJSResolver" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>addJSResolver</span></a>
 <a href="GraphQlApi.html#addLambdaResolver" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Lambda<wbr/>Resolver</span></a>
+<a href="GraphQlApi.html#addOperationFunctionMonitoring" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Operation<wbr/>Function<wbr/>Monitoring</span></a>
+<a href="GraphQlApi.html#addSingleTableMonitoring" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Single<wbr/>Table<wbr/>Monitoring</span></a>
 <a href="GraphQlApi.html#addVtlResolver" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Vtl<wbr/>Resolver</span></a>
 <a href="GraphQlApi.html#createEntryFile" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>create<wbr/>Entry<wbr/>File</span></a>
 <a href="GraphQlApi.html#createJSResolverFile" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>createJSResolver<wbr/>File</span></a>
@@ -120,6 +123,10 @@
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>hosted<wbr/>Zone</span><a href="#hostedZone" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">hosted<wbr/>Zone</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IHostedZone</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="BaseApi.html">BaseApi</a>.<a href="BaseApi.html#hostedZone">hostedZone</a></p></aside></section>
+<section class="tsd-panel tsd-member tsd-is-inherited"><a id="monitoring" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>monitoring</span><a href="#monitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">monitoring</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">MonitoringFacade</span></div><aside class="tsd-sources">
+<p>Inherited from <a href="BaseApi.html">BaseApi</a>.<a href="BaseApi.html#monitoring">monitoring</a></p></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="node" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>node</span><a href="#node" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">node</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type ">Node</span></div>
@@ -223,6 +230,32 @@
 <li>
 <h5><span class="tsd-kind-parameter">fieldName</span>: <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type tsd-kind-type-parameter">FIELDTYPE</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="LambdaFunction.html" class="tsd-signature-type tsd-kind-class">LambdaFunction</a></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited"><a id="addOperationFunctionMonitoring" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>add<wbr/>Operation<wbr/>Function<wbr/>Monitoring</span><a href="#addOperationFunctionMonitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="addOperationFunctionMonitoring.addOperationFunctionMonitoring-1"><span class="tsd-kind-call-signature">add<wbr/>Operation<wbr/>Function<wbr/>Monitoring</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">apiName</span>, <span class="tsd-kind-parameter">functions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#addOperationFunctionMonitoring.addOperationFunctionMonitoring-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">apiName</span>: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">functions</span>: <span class="tsd-signature-type ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type ">IFunction</span><span class="tsd-signature-symbol">&gt;</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="BaseApi.html">BaseApi</a>.<a href="BaseApi.html#addOperationFunctionMonitoring">addOperationFunctionMonitoring</a></p></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited"><a id="addSingleTableMonitoring" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>add<wbr/>Single<wbr/>Table<wbr/>Monitoring</span><a href="#addSingleTableMonitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="addSingleTableMonitoring.addSingleTableMonitoring-1"><span class="tsd-kind-call-signature">add<wbr/>Single<wbr/>Table<wbr/>Monitoring</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">dataStore</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#addSingleTableMonitoring.addSingleTableMonitoring-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">dataStore</span>: <a href="SingleTableDatastore.html" class="tsd-signature-type tsd-kind-class">SingleTableDatastore</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="BaseApi.html">BaseApi</a>.<a href="BaseApi.html#addSingleTableMonitoring">addSingleTableMonitoring</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addVtlResolver" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Vtl<wbr/>Resolver</span><a href="#addVtlResolver" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -446,6 +479,7 @@ this type-testing method instead.</p>
 <li><a href="#apiHostName" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>api<wbr/>Host<wbr/>Name</span></a></li>
 <li><a href="#cognitoAuth" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>cognito<wbr/>Auth</span></a></li>
 <li><a href="#hostedZone" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>hosted<wbr/>Zone</span></a></li>
+<li><a href="#monitoring" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>monitoring</span></a></li>
 <li><a href="#node" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>node</span></a></li>
 <li><a href="#props" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>props</span></a></li>
 <li><a href="#tableDataSource" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>table<wbr/>Data<wbr/>Source</span></a></li>
@@ -453,6 +487,8 @@ this type-testing method instead.</p>
 <li><a href="#addDynamoDbVtlResolver" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Dynamo<wbr/>Db<wbr/>Vtl<wbr/>Resolver</span></a></li>
 <li><a href="#addJSResolver" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>addJSResolver</span></a></li>
 <li><a href="#addLambdaResolver" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Lambda<wbr/>Resolver</span></a></li>
+<li><a href="#addOperationFunctionMonitoring" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Operation<wbr/>Function<wbr/>Monitoring</span></a></li>
+<li><a href="#addSingleTableMonitoring" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Single<wbr/>Table<wbr/>Monitoring</span></a></li>
 <li><a href="#addVtlResolver" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>add<wbr/>Vtl<wbr/>Resolver</span></a></li>
 <li><a href="#createEntryFile" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>create<wbr/>Entry<wbr/>File</span></a></li>
 <li><a href="#createJSResolverFile" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>createJSResolver<wbr/>File</span></a></li>

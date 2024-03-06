@@ -99,6 +99,17 @@ export class GraphQlApi<RESOLVERS> extends BaseApi {
         },
       },
     });
+
+    if (this.monitoring) {
+      this.monitoring.monitorAppSyncApi({
+        api: this.api,
+      });
+      this.addOperationFunctionMonitoring(props.apiName, this._functions);
+      if (props.singleTableDatastore) {
+        this.addSingleTableMonitoring(props.singleTableDatastore);
+      }
+    }
+
     if (customDomainName && this.api.appSyncDomainName) {
       new aws_route53.CnameRecord(this, 'DnsRecord', {
         zone: this.hostedZone!,
@@ -106,57 +117,6 @@ export class GraphQlApi<RESOLVERS> extends BaseApi {
         domainName: this.api.appSyncDomainName,
       });
     }
-
-    // if ((props.monitoring ?? true) && this.monitoring) {
-    //   this.monitoring.apiErrorsWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: '5XXError',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'sum',
-    //   }));
-    //   this.monitoring.apiErrorsWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: '4XXError',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'sum',
-    //   }));
-    //   this.monitoring.apiLatencyWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: 'Latency',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'Average',
-    //   }));
-    //   this.monitoring.apiLatencyWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: 'Latency',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'p90',
-    //   }));
-    //   this.monitoring.apiLatencyTailWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: 'Latency',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'p95',
-    //   }));
-    //   this.monitoring.apiLatencyTailWidget.addLeftMetric(new cloudwatch.Metric({
-    //     namespace: 'AWS/AppSync',
-    //     metricName: 'Latency',
-    //     dimensionsMap: {
-    //       GraphQLAPIId: this.api.apiId,
-    //     },
-    //     statistic: 'p99',
-    //   }));
-    // }
 
     if (props.singleTableDatastore) {
       this.tableDataSource = new aws_appsync.DynamoDbDataSource(this, 'SingleTableSource', {

@@ -110,6 +110,11 @@
       "type": "peer"
     },
     {
+      "name": "@aws-cdk/aws-redshift-alpha",
+      "version": "^2.120.0-alpha.0",
+      "type": "peer"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "^2.120.0",
       "type": "peer"
@@ -124,6 +129,10 @@
     },
     {
       "name": "axios",
+      "type": "runtime"
+    },
+    {
+      "name": "cdk-monitoring-constructs",
       "type": "runtime"
     },
     {
